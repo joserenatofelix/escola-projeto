@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # Banco de dados PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: escola
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - escola-network
+
+  # Backend da aplicação
+  backend:
+    build: ./escola-backend
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: postgres
+      DB_NAME: escola
+      DB_DIALECT: postgres
+      FRONTEND_URL: http://localhost:3001
+    depends_on:
+      - postgres
+    volumes:
+      - ./escola-backend:/app
+      - /app/node_modules
+    networks:
+      - escola-network
+    command: >
+      sh -c "npm install && 
+             npx sequelize-cli db:create || true && 
+             npx sequelize-cli db:migrate && 
+             npm run seed && 
+             npm run dev"
+
+  # Frontend da aplicação
+  frontend:
+    build: ./escola-frontend
+    ports:
+      - "3001:3001"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3000
+    depends_on:
+      - backend
+    volumes:
+      - ./escola-frontend:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - escola-network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+
+networks:
+  escola-network:
+    driver: bridge
