@@ -20,6 +20,7 @@ db.Building = require('./Building')(sequelize, DataTypes);
 db.Room = require('./Room')(sequelize, DataTypes);
 db.Class = require('./Class')(sequelize, DataTypes);
 db.ClassSchedule = require('./ClassSchedule')(sequelize, DataTypes);
+db.Examples = require('./Examples')(sequelize, DataTypes);
 
 // Associações
 db.Department.hasMany(db.Professor, { foreignKey: 'department_id' });

@@ -1,3 +1,4 @@
+// models/ClassSchedule.js
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define('ClassSchedule', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },

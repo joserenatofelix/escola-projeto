@@ -1,3 +1,4 @@
+// escola-backend/seed.js
 const db = require('./models');
 
 async function run() {

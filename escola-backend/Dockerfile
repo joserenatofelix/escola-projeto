@@ -1,3 +1,4 @@
+# escola-backend/Dockerfile
 # Use a imagem oficial do Node.js
 FROM node:18-alpine
 
@@ -12,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expõe a porta da aplicação
-EXPOSE 3000
+EXPOSE 3001
 
 # Comando para rodar a aplicação
 CMD ["npm", "run", "dev"]

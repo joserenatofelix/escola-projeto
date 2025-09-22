@@ -1,21 +1,53 @@
+<p align="center">
+  <a href="https://nodejs.org/" target="_blank">
+    <img src="https://nodejs.org/static/images/logo.svg" width="120" alt="Node.js Logo" />
+  </a>
+  &nbsp;&nbsp;&nbsp; <!-- Espaço -->
+  <a href="https://react.dev/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="120" alt="React Logo" />
+  </a>
+  &nbsp;&nbsp;&nbsp; <!-- Espaço -->
+  <a href="https://nextjs.org/" target="_blank">
+    <img src="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png" width="120" alt="Next.js Logo" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="License" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="Downloads" /></a>
+  <a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow on Twitter"/></a>
+</p>
+
 # 🏫 Sistema Escolar - Professor Girafales
-https://img.shields.io/badge/Node.js-18-green
-https://img.shields.io/badge/Next.js-14-black
-https://img.shields.io/badge/PostgreSQL-15-blue
-https://img.shields.io/badge/Docker-Compose-blue
 
 #### Sistema moderno de gestão escolar desenvolvido para atender às necessidades do Professor Girafales, incluindo controle de professores, salas, disciplinas e horários.
 
-## ✨ Funcionalidades
-- #### 📊 Dashboard de Horas por Professor - Visualize a carga horária de cada professor
-- #### 🏫 Gestão de Salas - Consulte horários ocupados e disponíveis
-- #### 👨‍🏫 Controle de Professores - Gerencie professores e suas disciplinas
-- #### 📅 Agenda Escolar - Visualize a grade horária completa
-- #### 🔍 Salas Livres - Encontre salas disponíveis em horários específicos
+---
 
-##🏗️ Arquitetura
+## ✨ Tecnologias
 
-text
+- [Node.js](https://www.nodejs.tech/pt-br)
+- [Next.js](https://nextjs.org/)
+- [React.js](https://react.dev/)
+- [Express.js](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+---
+
+## 📝 Funcionalidades
+- 📊 Dashboard de Horas por Professor - Visualize a carga horária de cada professor
+- 🏫 Gestão de Salas - Consulte horários ocupados e disponíveis
+- 👨‍🏫 Controle de Professores - Gerencie professores e suas disciplinas
+- 📅 Agenda Escolar - Visualize a grade horária completa
+- 🔍 Salas Livres - Encontre salas disponíveis em horários específicos
+---
+
+## 🗂️ Arquitetura
+
+```
 escola-projeto/
 ├── 📁 escola-backend/          # API Node.js + Express + Sequelize
 │   ├── 📁 models/              # Modelos do banco de dados
@@ -30,52 +62,38 @@ escola-projeto/
 │   └── Dockerfile              # Configuração do Docker
 │
 └── 📄 docker-compose.yml       # Orquestração de containers
-
-## 🚀 Como Executar
+```
+---
+## ⚙️ Como Executar
 
 ### Pré-requisitos
 - #### Docker e Docker Compose instalados
 - #### Git para clonar o repositório
 
 ### **Método 1:** Docker Compose (Recomendado)
+
 ```
-Clone o repositório (se aplicável)
-git clone <url-do-repositorio>
+git clone https://github.com/joserenatofelix/escola-projeto.git
 ```
-#### Navegue até o diretório do projeto
+#### Entre no diretório do projeto
 ```
 cd escola-projeto
 ```
-#### Execute o docker-compose
+#### Suba os containers
 ```
 docker-compose up -d
 ```
-#### Para ver os logs em tempo real
+#### Ver logs em tempo real
 ```
 docker-compose logs -f
 ```
+---
 ### **Método 2:**  Execução Manual
 ***Backend (Node.js)***
 ```
 cd escola-backend
 ```
-#### Instale as dependências
-```
-npm install
-```
-#### Configure as variáveis de ambiente
-```
-cp .env.example .env
-```
-#### Execute o seed do banco de dados
-```
-npm run seed
-```
-#### Inicie o servidor
-```
-npm run dev
-```
----
+
 ***Frontend (Next.js)***
 ```
 cd escola-frontend
@@ -99,9 +117,9 @@ GRANT ALL PRIVILEGES ON DATABASE escola TO postgres;
 ```
 ---
 ## 🌐 URLs de Acesso
-- #### Frontend: http://localhost:3001
-- #### Backend API: http://localhost:3000
-- #### Health Check: http://localhost:3000/api/health
+- #### Frontend: http://localhost:3000
+- #### Backend API: http://localhost:3001
+- #### Health Check: http://localhost:3001/api/health
 ---
 ## 🐳 Comandos Docker Úteis
 
@@ -132,26 +150,26 @@ docker-compose exec backend npm run seed
 
 ***1. Health Check***
 
-****GET:**** http://localhost:3000/api/health
+****GET:**** http://localhost:3001/api/health
 
 ***2. Horas por Professor***
 
-****GET:**** http://localhost:3000/api/professores/horas
+****GET:**** http://localhost:3001/api/professores/horas
 
 ***3. Horários das Salas***
 
-****GET:**** http://localhost:3000/api/salas/horarios
+****GET:**** http://localhost:3001/api/salas/horarios
 
 ***4. Salas Livres (com parâmetros)***
-****GET**** http://localhost:3000/api/salas/livres?day=Monday&start=09:00&end=10:00
+****GET**** http://localhost:3001/api/salas/livres?day=Monday&start=09:00&end=10:00
 
 ***5. Listar Professores***
 
-****GET**** http://localhost:3000/api/professors
+****GET**** http://localhost:3001/api/professors
 
 ***6. Criar Novo Professor***
 
-****POST**** http://localhost:3000/api/professors
+****POST**** http://localhost:3001/api/professors
 
 Content-Type: application/json
 
@@ -162,10 +180,10 @@ Content-Type: application/json
 }
 7. Buscar Professor por ID
 text
-GET http://localhost:3000/api/professors/1
+GET http://localhost:3001/api/professors/1
 8. Atualizar Professor
 text
-PUT http://localhost:3000/api/professors/1
+PUT http://localhost:3001/api/professors/1
 Content-Type: application/json
 
 {
@@ -174,7 +192,7 @@ Content-Type: application/json
 
 ***9. Deletar Professor***
 
-****DELETE**** http://localhost:3000/api/professors/1
+****DELETE**** http://localhost:3001/api/professors/1
 
 ###📋 Exemplo de Teste no Postman
 
@@ -182,7 +200,7 @@ Content-Type: application/json
 
 Abra o Postman e crie uma nova requisição GET
 
-URL: http://localhost:3000/api/salas/livres?day=Monday&start=09:00&end=10:00
+URL: http://localhost:3001/api/salas/livres?day=Monday&start=09:00&end=10:00
 
 Clique em Send
 
@@ -227,15 +245,15 @@ DB_USER=postgres
 DB_PASS=postgres
 DB_NAME=escola
 DB_DIALECT=postgres
-PORT=3000
-FRONTEND_URL=http://localhost:3001
+PORT=3001
+FRONTEND_URL=http://localhost:3000
 ```
 ***Frontend***
 ```
 env
 ```
 ```
-NEXT_PUBLIC_API_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 ---
 ---
