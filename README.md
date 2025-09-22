@@ -67,9 +67,10 @@ escola-projeto/
 ## ⚙️ Como Executar
 
 ### Pré-requisitos
+- PostgreSQL instalado
 - #### Docker e Docker Compose instalados
-- #### Git para clonar o repositório
-
+- #### Clonar o repositório
+---
 ### **Método 1:** Docker Compose (Recomendado)
 
 ```
@@ -93,7 +94,19 @@ docker-compose logs -f
 ```
 cd escola-backend
 ```
-
+#### Instale as dependências
+```
+npm install
+```
+#### Popular o banco com os dados de exemplo
+```
+npm run seed
+```
+#### Executar em modo desenvolvimento
+```
+npm run dev
+```
+---
 ***Frontend (Next.js)***
 ```
 cd escola-frontend
@@ -256,7 +269,6 @@ env
 NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 ---
----
 ##🐛 Solução de Problemas
 ***Erro de Conexão com o Banco***
 
@@ -273,7 +285,7 @@ Verifique processos nas portas 3000, 3001, 5432
 lsof -i :3000
 lsof -i :3001
 lsof -i :5432
-```
+
 #### Ou use docker para ver portas
 ```
 docker ps
@@ -300,3 +312,5 @@ docker-compose up --build
 - #### Este projeto é para fins educacionais e de demonstração.
 - #### Desenvolvido por Renato Felix para o Professor Girafales 🎓
 - #### "Tá tá tá tá tá!" - Professor Girafales
+---
+<img width="580" height="620" alt="image" src="https://github.com/user-attachments/assets/cdb39d03-0b53-4db3-9819-d7d0de25709e" />
